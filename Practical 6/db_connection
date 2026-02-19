@@ -1,0 +1,30 @@
+const {MongoClient} = require('mongodb'); 
+// Yaha par apne 'MongoClient' naam ka tool mnga rhe hai, jo connection bnane ke kaam aata hai.
+const url = "mongodb+srv://example_user1234:dbms1234@examplecluster.qeohkfl.mongodb.net/";
+// ye url address hai apne database ka. Upr wala to cloud (mongodb atlas) ka link hai. And agar apne computer pr chla rhe hai to 127.0.0.1 wala use hota hai, uske liye mongoDB install krna pdega.
+
+const client = new MongoClient(url);
+// Yaha hamne ek new client bnaya or use database ka address de diya. Ye ek treeke ka agent bnega jo connection ko smbhalega.
+
+let db;
+// Ye ek khali container (variable) hai, jisme ham database ka access store kr denge.
+
+async function connectDB() { // database se connect hone me time lgta hai, isliye hamne async use kra.
+    try {
+        await client.connect(); // ye line kehti hai ki jbtk database se connection establish na ho jaaye to aage mat bhadhna.
+        db = client.db("collegeDB"); // agar 'collegeDB' naam se database nhi hoga vaha, to is name se database bna dega.
+        console.log("MongoDB Connected Successfully");
+    } catch (error) {
+        console.error("Database Connection Failed:", error);
+    }
+}
+
+function getDB() {
+    return db;
+}
+// ye wala database ke access ke liye hai taaki koi or module is functionality ko easily access kar ske.
+
+module.exports = {
+    connectDB, // server.js 'connectDB' ko call krega, taaki project shuru hote hi connection ban jaaye.
+    getDB // studentController.js file 'getDB' ko call kregi taaki vo data pr operations (insert, delete, etc.) perform kar ske.
+};
