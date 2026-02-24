@@ -15,7 +15,7 @@ app.use(express.json());
 connectDB(); // ye line connection bnayegi. Jaise hi server chlega, ye line database se connection bna degi. 
 
 // Routes
-app.use('./students', studentRoutes);
+app.use('/students', studentRoutes);
 // Ye server ko bta rha hai ki agar koi bhi request /students se shuru ho (like: http://localhost:3000/students), to use 'studentsRoutes.js' file ke paas bhej do.
 
 // Start Server

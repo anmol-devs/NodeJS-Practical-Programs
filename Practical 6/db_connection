@@ -1,6 +1,6 @@
 const {MongoClient} = require('mongodb'); 
 // Yaha par apne 'MongoClient' naam ka tool mnga rhe hai, jo connection bnane ke kaam aata hai.
-const url = "mongodb+srv://example_user1234:dbms1234@examplecluster.qeohkfl.mongodb.net/";
+const url = "mongodb://localhost:27017/";
 // ye url address hai apne database ka. Upr wala to cloud (mongodb atlas) ka link hai. And agar apne computer pr chla rhe hai to 127.0.0.1 wala use hota hai, uske liye mongoDB install krna pdega.
 
 const client = new MongoClient(url);

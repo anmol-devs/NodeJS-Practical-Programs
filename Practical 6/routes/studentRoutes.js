@@ -8,7 +8,7 @@ const {
     addStudent,
     getStudents,
     updateStudent,
-    deleteStudent
+    deleteStudent,
 } = require('../controllers/studentController');
 // Yaha vahi Object Destructuring ka use kra hai jo 'studentController.js' file me kri thi. Ham studentController file se saare functions nikaal rhe hai taake unhe use kr ske, routes assign kr ske.
 
@@ -16,9 +16,9 @@ const {
 router.post('/', addStudent); 
 // Jab koi user root path (/) par POST request bhejega, toh server addStudents wala function ko chla dega.
 router.get('/', getStudents);
-router.patch(':/id', updateStudent); 
+router.patch('/:id', updateStudent); 
 // Yaha '/:id' means 'Dynamic ID', means url kuch bhi ho skta hai us particular student ka, jo id denge url me uske according hoga.
-router.delete(':/id', deleteStudent);
+router.delete('/:id', deleteStudent);
 
 module.exports = router;
 // Hamne yaha is poore Router ko export kar liya, jise ab ham apni main file 'server.js' me import krke use krenge. Aise alag alag modules me kaam karne ka ye faida hai ki hmara code clean rehta hai, and maintainability, readability, etc. bhadiya rhti hai.

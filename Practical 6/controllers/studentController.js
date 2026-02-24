@@ -92,11 +92,13 @@ async function deleteStudent(req, res) {
             result // Btaega ki kitne documents delete hue hai.
         });
     } catch(error) {
-        rmSync.status(500).json({
+        res.status(500).json({
             error: error.message
         });
     }
 }
+
+
 
 module.exports = {
     addStudent,
