@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - NexShop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt"></i> NexShop
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for premium products...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="login.html" id="auth-link"><i class="fa-regular fa-user"></i> Sign In</a>
+                <a href="orders.html" id="orders-link"><i class="fa-solid fa-box"></i> Orders</a>
+                <a href="cart.html" class="cart-icon-container">
+                    <i class="fa-solid fa-cart-shopping"></i> Cart
+                    <span id="cart-count" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content: Product Details -->
+    <main class="main-content">
+        <a href="index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Products
+        </a>
+        
+        <div class="product-detail-container" id="product-detail-container">
+            <!-- Loading state -->
+            <div class="loading-spinner"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NexShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initProductDetailPage();
+        });
+    </script>
+</body>
+</html>

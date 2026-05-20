@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - NexShop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt"></i> NexShop
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content: Login/Register Section -->
+    <main class="main-content login-page">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="tab-login">Sign In</button>
+                <button class="auth-tab" id="tab-register">Register</button>
+            </div>
+            
+            <div class="auth-form-container">
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form active">
+                    <h2>Welcome back</h2>
+                    <p>Enter your details to access your account</p>
+                    
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" required placeholder="name@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required placeholder="••••••••">
+                    </div>
+                    
+                    <div id="login-error" class="error-message"></div>
+                    
+                    <button type="submit" class="btn-primary w-100">Sign In</button>
+                </form>
+
+                <!-- Register Form -->
+                <form id="register-form" class="auth-form">
+                    <h2>Create an account</h2>
+                    <p>Join NexShop for premium electronics</p>
+                    
+                    <div class="form-group">
+                        <label for="reg-name">Full Name</label>
+                        <input type="text" id="reg-name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-email">Email Address</label>
+                        <input type="email" id="reg-email" required placeholder="name@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" required placeholder="••••••••">
+                    </div>
+                    
+                    <div id="reg-error" class="error-message"></div>
+                    
+                    <button type="submit" class="btn-primary w-100">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setupAuthPage();
+        });
+    </script>
+</body>
+</html>

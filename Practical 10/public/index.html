@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexShop - Premium Electronics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt"></i> NexShop
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for premium products...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="login.html" id="auth-link"><i class="fa-regular fa-user"></i> Sign In</a>
+                <a href="orders.html" id="orders-link"><i class="fa-solid fa-box"></i> Orders</a>
+                <a href="cart.html" class="cart-icon-container">
+                    <i class="fa-solid fa-cart-shopping"></i> Cart
+                    <span id="cart-count" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Next-Gen Electronics</h1>
+            <p>Elevate your lifestyle with our curated selection of premium devices and accessories.</p>
+            <a href="#products-section" class="btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Main Content: Products List -->
+    <main class="main-content" id="products-section">
+        <div class="section-header">
+            <h2>Trending Products</h2>
+            <div class="filter-sort">
+                <select id="sort-select">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="products-grid" id="products-grid">
+            <!-- Products will be dynamically injected here by script.js -->
+            <div class="loading-spinner"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>NexShop</h3>
+                <p>The ultimate destination for premium electronics and accessories.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h3>Customer Service</h3>
+                <a href="#">Help Center</a>
+                <a href="#">Returns</a>
+                <a href="orders.html">Track Order</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NexShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "NEX-20260520-2213",
+    "userEmail": "test@example.com",
+    "userName": "Test User",
+    "items": [
+      {
+        "id": 1,
+        "name": "Sony WH-1000XM5",
+        "price": 398,
+        "image": "url",
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "name": "Test User",
+      "email": "test@example.com",
+      "phone": "1234567890",
+      "address": "123 Test St",
+      "city": "Test City",
+      "zip": "12345"
+    },
+    "paymentMethod": "Card",
+    "total": 429.84,
+    "status": "Packed",
+    "createdAt": "2026-05-20T05:59:07.111Z",
+    "statusHistory": [
+      {
+        "status": "Ordered",
+        "timestamp": "2026-05-20T05:59:07.111Z",
+        "comment": "Order placed successfully."
+      },
+      {
+        "status": "Packed",
+        "timestamp": "2026-05-20T05:59:20.586Z",
+        "comment": "Your items have been packed and are ready for dispatch."
+      }
+    ]
+  },
+  {
+    "id": "NEX-20260520-5045",
+    "userEmail": "John@gmail.com",
+    "userName": "John Doe",
+    "items": [
+      {
+        "id": 1,
+        "name": "Sony WH-1000XM5 Wireless Headphones",
+        "price": 398,
+        "image": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=600",
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "name": "John Doe",
+      "email": "John@gmail.com",
+      "phone": "6351458759",
+      "address": "Malviya Nagar",
+      "city": "Jaipur",
+      "zip": "342026"
+    },
+    "paymentMethod": "Cash on Delivery",
+    "total": 429.84,
+    "status": "Cancelled",
+    "createdAt": "2026-05-20T06:08:25.403Z",
+    "statusHistory": [
+      {
+        "status": "Ordered",
+        "timestamp": "2026-05-20T06:08:25.403Z",
+        "comment": "Order placed successfully."
+      },
+      {
+        "status": "Cancelled",
+        "timestamp": "2026-05-20T06:09:55.681Z",
+        "comment": "Order cancelled by customer."
+      }
+    ]
+  }
+]

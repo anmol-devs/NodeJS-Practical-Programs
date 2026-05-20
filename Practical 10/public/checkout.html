@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - NexShop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt"></i> NexShop
+            </a>
+            <div class="nav-links">
+                <a href="login.html" id="auth-link"><i class="fa-regular fa-user"></i> Sign In</a>
+                <a href="orders.html" id="orders-link"><i class="fa-solid fa-box"></i> Orders</a>
+                <a href="cart.html" class="cart-icon-container">
+                    <i class="fa-solid fa-cart-shopping"></i> Cart
+                    <span id="cart-count" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content: Checkout Section -->
+    <main class="main-content">
+        <a href="cart.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Return to Cart
+        </a>
+        
+        <div class="checkout-container">
+            <!-- Left Panel: Forms -->
+            <div class="checkout-card">
+                <h2>Shipping Address</h2>
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="shipping-name">Full Name</label>
+                        <input type="text" id="shipping-name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="shipping-email">Email Address</label>
+                            <input type="email" id="shipping-email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="shipping-phone">Phone Number</label>
+                            <input type="tel" id="shipping-phone" required placeholder="+1 (555) 000-0000">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="shipping-address">Street Address</label>
+                        <input type="text" id="shipping-address" required placeholder="123 Main St, Apt 4B">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="shipping-city">City</label>
+                            <input type="text" id="shipping-city" required placeholder="New York">
+                        </div>
+                        <div class="form-group">
+                            <label for="shipping-zip">ZIP / Postal Code</label>
+                            <input type="text" id="shipping-zip" required placeholder="10001">
+                        </div>
+                    </div>
+
+                    <h2 style="margin-top: 2.5rem;">Payment Method</h2>
+                    <div class="payment-tabs">
+                        <button type="button" class="payment-tab-btn active" id="tab-card">
+                            <i class="fa-solid fa-credit-card"></i> Card
+                        </button>
+                        <button type="button" class="payment-tab-btn" id="tab-upi">
+                            <i class="fa-solid fa-mobile-screen-button"></i> UPI
+                        </button>
+                        <button type="button" class="payment-tab-btn" id="tab-cod">
+                            <i class="fa-solid fa-hand-holding-dollar"></i> Cash on Delivery
+                        </button>
+                    </div>
+
+                    <!-- Card Form -->
+                    <div class="payment-form active" id="form-card">
+                        <div class="form-group">
+                            <label for="card-name">Cardholder Name</label>
+                            <input type="text" id="card-name" placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" placeholder="4111 2222 3333 4444" maxlength="19">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="card-expiry">Expiry Date</label>
+                                <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-cvv">CVV</label>
+                                <input type="password" id="card-cvv" placeholder="•••" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UPI Form -->
+                    <div class="payment-form" id="form-upi">
+                        <div class="form-group">
+                            <label for="upi-id">UPI ID</label>
+                            <input type="text" id="upi-id" placeholder="username@upi">
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
+                                Enter your VPA/UPI ID. A request will be sent to your UPI app.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- COD Info -->
+                    <div class="payment-form" id="form-cod">
+                        <div style="background: var(--bg-color); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 0.75rem;">
+                            <i class="fa-solid fa-circle-info" style="color: var(--primary); font-size: 1.2rem;"></i>
+                            <span style="font-size: 0.95rem; color: var(--text-main);">
+                                You will pay in cash or via mobile wallet to the delivery courier once your order arrives.
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Right Panel: Order Summary -->
+            <div class="checkout-summary-card">
+                <h3>Order Summary</h3>
+                <div class="checkout-items-list" id="checkout-items-list">
+                    <!-- Dynamic items injection -->
+                </div>
+                
+                <div class="summary-row">
+                    <span>Items Subtotal:</span>
+                    <span id="checkout-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping & Handling:</span>
+                    <span style="color: var(--secondary); font-weight: 600;">FREE</span>
+                </div>
+                <div class="summary-row">
+                    <span>Estimated Tax (8%):</span>
+                    <span id="checkout-tax">$0.00</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-row total-row" style="margin-bottom: 1.5rem;">
+                    <span>Order Total:</span>
+                    <span id="checkout-total" style="color: var(--primary);">$0.00</span>
+                </div>
+                
+                <button type="submit" form="checkout-form" class="btn-primary checkout-btn" id="place-order-btn">
+                    Place Your Order
+                </button>
+                <div class="secure-checkout">
+                    <i class="fa-solid fa-shield-halved"></i> Secure 256-bit SSL encrypted checkout
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NexShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initCheckoutPage();
+        });
+    </script>
+</body>
+</html>

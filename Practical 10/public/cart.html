@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - NexShop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt"></i> NexShop
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for premium products...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="login.html" id="auth-link"><i class="fa-regular fa-user"></i> Sign In</a>
+                <a href="orders.html" id="orders-link"><i class="fa-solid fa-box"></i> Orders</a>
+                <a href="cart.html" class="cart-icon-container active">
+                    <i class="fa-solid fa-cart-shopping"></i> Cart
+                    <span id="cart-count" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content: Cart Section -->
+    <main class="main-content cart-page">
+        <div class="cart-container">
+            <div class="cart-items-section">
+                <h2>Shopping Cart</h2>
+                <div class="cart-header">
+                    <span class="col-product">Product</span>
+                    <span class="col-price">Price</span>
+                    <span class="col-quantity">Quantity</span>
+                    <span class="col-total">Subtotal</span>
+                </div>
+                <div id="cart-items-container">
+                    <!-- Cart items will be dynamically injected here -->
+                    <div class="empty-cart-msg" style="display: none;">
+                        <i class="fa-solid fa-cart-arrow-down empty-icon"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Looks like you haven't added anything to your cart yet.</p>
+                        <a href="index.html" class="btn-primary">Continue Shopping</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cart-summary-section">
+                <h3>Order Summary</h3>
+                <div class="summary-row">
+                    <span>Items Total:</span>
+                    <span id="summary-items-total">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping:</span>
+                    <span id="summary-shipping">Free</span>
+                </div>
+                <div class="summary-row">
+                    <span>Estimated Tax:</span>
+                    <span id="summary-tax">$0.00</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-row total-row">
+                    <span>Order Total:</span>
+                    <span id="summary-total">$0.00</span>
+                </div>
+                <button class="btn-primary checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+                <div class="secure-checkout">
+                    <i class="fa-solid fa-shield-halved"></i> Secure Checkout Guarantee
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NexShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Specific script to render cart on this page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCartPage();
+        });
+    </script>
+</body>
+</html>
