@@ -1,5 +1,5 @@
 const fs = require("fs").promises;
-//fs.readFile is now used as fs.promises.readFile , when we used require('fs').promise in the header. other wise fs.readFile will be read as a callback instead of promise.
+//fs.readFile is now used as fs.promises.readFile , when we used require('fs').promises in the header. other wise fs.readFile will be read as a callback instead of promise.
 async function processFile() {
   try {
     const file1 = await fs.readFile("file1.txt", "utf8");
@@ -9,7 +9,7 @@ async function processFile() {
     console.log(file2);
 
     const file3 = await fs.readFile("file3.txt", "utf8");
-    console.log("File3 processed using Async/Await :");
+    console.log("File3 processed using Async/Await :"); // Ye wala pehle print hoga kyoki upr data aane me thoda sa time lgega.
     console.log(file3);
   } catch {
     console.error("Error occured in reading file");

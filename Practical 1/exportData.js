@@ -5,4 +5,4 @@ exports.student = {
   marks: 91
 }
 
-// If exporting multiple functions or objects, then use "module.exports"
+// If exporting multiple functions or objects, then use "module.exports" wrna ek ke liye ye bhi chlega.

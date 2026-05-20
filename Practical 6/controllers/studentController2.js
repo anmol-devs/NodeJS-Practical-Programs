@@ -15,7 +15,7 @@ async function addManyStudents(req, res) {
         }
 
         const result = await db.collection("students").insertMany(req.body);
-
+        
         res.status(201).json({
             message: "Multiple Students Added Successfully",
             insertedCount: result.insertedCount,
@@ -29,7 +29,28 @@ async function addManyStudents(req, res) {
 }
 
 // GET - Get All Students
+async function getStudentById(req, res) {
+    try {
+        const db = getDB();
+        const { id } = req.params;
 
+        const student = await db.collection("students").findOne({
+            _id: new ObjectId(id)
+        });
+
+        if (!student) {
+            return res.status(404).json({
+                message: "Student not found"
+            });
+        }
+
+        res.json(student);
+    } catch (error) {
+        res.status(500).json({
+            error: error.message
+        });
+    }
+}
 
 //PATCH: Update students:
 // Many students ko update krne ke liye
@@ -96,5 +117,6 @@ async function deleteManyStudents(req, res) {
 module.exports = {
     addManyStudents,
     updateManyStudents,
-    deleteManyStudents
+    deleteManyStudents,
+    getStudentById
 };

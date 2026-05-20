@@ -20,7 +20,7 @@ Promise.all([
 ])
 
   // if we console.log('') between the readFilePromise , then console.log will be in the ouput before readFile
-  // as it needs all the functions(promises) to be resolved first and than print all of them togather. If any one is stuck with error , they non of them will be executed
+  // as it needs all the functions(promises) to be resolved first and than print all of them togather. If any one is stuck with error , then none of them will be executed
   .then((data) => {
     console.log("All files read successfully!");
     console.log(data);

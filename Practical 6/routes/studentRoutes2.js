@@ -6,12 +6,14 @@ const router = express.Router();
 const {
     addManyStudents,
     updateManyStudents,
-    deleteManyStudents
+    deleteManyStudents,
+    getStudentById
 } = require('../controllers/studentController2');
 
 // Neeche routes define kre hai.
 router.post('/many', addManyStudents);
 router.patch('/many/update', updateManyStudents);
 router.delete('/many/delete', deleteManyStudents);
+router.get('/:id', getStudentById);
 
 module.exports = router;
